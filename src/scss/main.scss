@@ -1,0 +1,45 @@
+:root {
+  $acent: #cc8869;
+  $text: #333;
+  $regular-text: 16px;
+  $lineheight: 1.65;
+  $userfont: roboto-st, sans-serif;
+  $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'assassin-st';
+  src: url('../fonts/assassin.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 700;
+}
+
+::placeholder { color: #666; }
+::selection { background-color: var($acent); color: #fff; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+body {
+  font-family: var($userfont);
+  font-size: var($regular-text);
+  line-height: var($lineheight);
+  color: var($text);
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body, html {
+  height: 100%;
+}
+
+.showcase {
+	background-color: #000;
+	height: 100%;
+	position: relative;
+	color: #fff;
+  &__video {
+    
+  }
+}
