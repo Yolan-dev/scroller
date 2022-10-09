@@ -1,5 +1,9 @@
 {
   "devDependencies": {
+    "@parcel/transformer-sass": "2.7.0",
     "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "swiper": "^8.4.3"
   }
 }
