@@ -142,6 +142,9 @@ html {
     &__imageLeft {
       perspective-origin: left center;
       clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      .showcaseCarousel__image {
+        animation: k-left-side 2s ease-in-out infinite;
+      }
     }
     &__imageRight {
       perspective-origin: right center;
