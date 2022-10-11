@@ -29,7 +29,7 @@ html {
   height: 100%;
   position: relative;
   color: #fff;
-  overflow: hidden;
+  // overflow: hidden;
 
   &::before {
     content: '';
@@ -131,19 +131,25 @@ html {
       transform: scale(0.9);
     }
   }
-  .showcaseCarousel__imageWrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    perspective: 150px;
-    transform-style: preserve-3d;
-  }
-  .showcaseCarousel__image {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  .showcaseCarousel {
+    &__imageWrapper {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      perspective: 150px;
+      transform-style: preserve-3d;
+    }
+    &__imageLeft {
+      perspective-origin: left center;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+    &__image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
