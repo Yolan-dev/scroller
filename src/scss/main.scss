@@ -132,7 +132,7 @@ html {
     }
   }
   .showcaseCarousel {
-    &__imageWrapper {
+    &__imageWrapper > * {
       position: absolute;
       height: 100%;
       width: 100%;
@@ -142,6 +142,10 @@ html {
     &__imageLeft {
       perspective-origin: left center;
       clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+    &__imageRight {
+      perspective-origin: right center;
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     }
     &__image {
       position: absolute;
