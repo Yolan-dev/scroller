@@ -1,5 +1,6 @@
-import Swiper from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 import 'swiper/swiper.scss';
+Swiper.use(Navigation);
 
 const swiper = new Swiper('.showcaseCarousel', {
   // loop: true,
@@ -7,8 +8,8 @@ const swiper = new Swiper('.showcaseCarousel', {
   speed: 1800,
   centeredSlides: true,
   navigation: {
-    nextEl: '.showcase-navigation__next',
-    prevEl: '.showcase-navigation__prev',
+    nextEl: '.showcase__navigation--next',
+    prevEl: '.showcase__navigation--prev',
   },
 });
 document.querySelector('video').playbackRate = 2;
