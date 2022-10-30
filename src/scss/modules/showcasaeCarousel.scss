@@ -1,0 +1,33 @@
+.showcaseCarousel {
+  &__imageWrapper > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    perspective: 150px;
+    transform-style: preserve-3d;
+  }
+  &__imageLeft {
+    perspective-origin: left center;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    .showcaseCarousel__image {
+      animation: k-left-side 2s ease-in-out infinite;
+      animation-direction: alternate;
+    }
+  }
+  &__imageRight {
+    perspective-origin: right center;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    .showcaseCarousel__image {
+      animation: k-right-side 2s ease-in-out infinite;
+      animation-direction: alternate;
+    }
+  }
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

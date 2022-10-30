@@ -131,32 +131,55 @@ html {
       transform: scale(0.9);
     }
   }
-  .showcaseCarousel {
-    &__imageWrapper > * {
+  &__navigation {
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &--prev,
+    &--next {
       position: absolute;
       height: 100%;
-      width: 100%;
-      perspective: 150px;
-      transform-style: preserve-3d;
-    }
-    &__imageLeft {
-      perspective-origin: left center;
-      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-      .showcaseCarousel__image {
-        animation: k-left-side 2s ease-in-out infinite;
+      width: 50%;
+      outline: none;
+      cursor: pointer;
+      &::before {
+        content: '?';
+        font-family: assassin-st;
+        opacity: 0;
+        transition: opacity 0.75s ease-in-out;
+        position: absolute;
+        top: 50%;
+        font-size: 32;
+      }
+      &:hover {
+        &::before {
+          opacity: 0.5;
+        }
+      }
+      &.swiper-button-disabled {
+        cursor: auto;
+        &::before {
+          visibility: hidden;
+        }
       }
     }
-    &__imageRight {
-      perspective-origin: right center;
-      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    &--next {
+      right: 0;
+      &::before {
+        transform: rotate(90deg);
+        right: 50px;
+      }
     }
-    &__image {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+    &--prev {
+      left: 0;
+      &::before {
+        transform: rotate(-90deg);
+        left: 50px;
+      }
     }
   }
 }
